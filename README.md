@@ -1,2 +1,0 @@
-# ssyd-api
-Begin app
