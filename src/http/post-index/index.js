@@ -7,7 +7,7 @@ exports.handler = async function http(req) {
   console.log(body);
 
   try {
-    if (!body) throw new Error(600);
+    // if (!body) throw new Error(600);
     // let info = await ytdl.getInfo(
     //   "https://www.pornhub.com/view_video.php?viewkey=ph5f43314708e7e"
     // );
