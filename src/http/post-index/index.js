@@ -4,14 +4,18 @@ const parseBody = arc.http.helpers.bodyParser;
 
 exports.handler = async function http(req) {
   let body = parseBody(req);
-  console.log(body);
+  console.log("body", body);
+  console.log(body.url);
+  const vID = body.url;
+  console.log(vID);
 
   try {
+    if (!ytdl.validateID(vID)) throw new Error("invalid ID");
     // if (!body) throw new Error(600);
     // let info = await ytdl.getInfo(
     //   "https://www.pornhub.com/view_video.php?viewkey=ph5f43314708e7e"
     // );
-    let info = await ytdl.getInfo("jbGRowa5tIk");
+    let info = await ytdl.getInfo(vID);
     info = info.formats;
     let containsAudio;
     containsAudio = info.filter((key) => key.container === "mp4");
@@ -23,7 +27,7 @@ exports.handler = async function http(req) {
       body: JSON.stringify(containsAudio),
     };
   } catch (e) {
-    console.error(e.message);
+    console.error("error", e.message);
     let error = {
       error: "Something blew up. Sorry.",
     };
