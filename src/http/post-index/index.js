@@ -17,14 +17,16 @@ exports.handler = async function http(req) {
     // );
     let info = await ytdl.getInfo(vID);
     info = info.formats;
-    let containsAudio;
-    containsAudio = info.filter((key) => key.container === "mp4");
+    info = info.filter((key) => key.hasAudio === true);
+    info = info.filter((key) => key.hasVideo === true);
+    // let containsAudio;
+    // containsAudio = info.filter((key) => key.container === "mp4");
     return {
       statusCode: 200,
       headers: {
         "content-type": "application/json; charset=utf8",
       },
-      body: JSON.stringify(containsAudio),
+      body: JSON.stringify(info),
     };
   } catch (e) {
     console.error("error", e.message);
