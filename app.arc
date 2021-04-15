@@ -4,6 +4,7 @@ begin-app
 @http
 get /
 post /
+post /collect
 
 @tables
 data
