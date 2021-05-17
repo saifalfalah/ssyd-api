@@ -17,8 +17,9 @@ exports.handler = async function http(req) {
     // );
     let info = await ytdl.getInfo(vID);
     info = info.formats;
-    info = info.filter((key) => key.hasAudio === true);
-    info = info.filter((key) => key.hasVideo === true);
+    // info = info.filter((key) => key.hasAudio === true);
+    // info = info.filter((key) => key.hasVideo === true);
+
     // let containsAudio;
     // containsAudio = info.filter((key) => key.container === "mp4");
     return {

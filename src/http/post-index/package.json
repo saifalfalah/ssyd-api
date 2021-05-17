@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@architect/functions": "^3.13.10",
-    "ytdl-core": "^4.5.0"
+    "@architect/functions": "^3.13.11",
+    "ytdl-core": "^4.8.0"
   }
 }
