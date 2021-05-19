@@ -33,6 +33,7 @@ exports.handler = async function http(req) {
     // let containsAudio;
     // containsAudio = info.filter((key) => key.container === "mp4");
     return {
+      cors: true,
       statusCode: 200,
       headers: {
         "content-type": "application/json; charset=utf8",
