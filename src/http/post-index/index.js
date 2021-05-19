@@ -3,6 +3,15 @@ const arc = require("@architect/functions");
 const parseBody = arc.http.helpers.bodyParser;
 
 exports.handler = async function http(req) {
+  return {
+    statusCode: 200,
+    headers: {
+      "content-type": "application/json; charset=utf8",
+    },
+    body: {
+      hello: "true",
+    },
+  };
   try {
     let body = parseBody(req);
     console.log("body", body);
