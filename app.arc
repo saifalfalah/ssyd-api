@@ -5,6 +5,7 @@ begin-app
 get /
 post /
 post /collect
+options /
 
 @tables
 data
