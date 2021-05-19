@@ -30,17 +30,33 @@ let body = `
 `;
 
 exports.handler = async function http(req) {
+  console.log(req);
   return {
     headers: {
-      "content-type": "text/html; charset=utf8",
-      "cache-control":
-        "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
       "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Headers": "*",
     },
     statusCode: 200,
     body,
   };
 };
+
+// exports.handler = async function http(req) {
+//   console.log("hey1");
+//   if (req.httpMethod === "OPTIONS") {
+//     console.log("hey");
+//   }
+//   return {
+//     headers: {
+//       "content-type": "text/html; charset=utf8",
+//       "cache-control":
+//         "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0",
+//       "Access-Control-Allow-Origin": "*",
+//     },
+//     statusCode: 200,
+//     body,
+//   };
+// };
 
 // Example responses
 
