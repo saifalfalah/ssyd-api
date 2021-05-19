@@ -8,9 +8,9 @@ exports.handler = async function http(req) {
     headers: {
       "content-type": "application/json; charset=utf8",
     },
-    body: {
+    body: JSON.stringify({
       hello: "true",
-    },
+    }),
   };
   try {
     let body = parseBody(req);
