@@ -38,6 +38,7 @@ exports.handler = async function http(req) {
       headers: {
         "content-type": "application/json; charset=utf8",
         "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "*",
       },
       body: JSON.stringify(formats),
     };
