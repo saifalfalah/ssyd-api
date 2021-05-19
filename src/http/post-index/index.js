@@ -23,8 +23,8 @@ exports.handler = async function http(req) {
 
     const formats = {};
 
-    formats["v1080"] = v1080.url;
-    formats["audio"] = audio.url;
+    formats["v1080"] = v1080["url"];
+    formats["audio"] = audio["url"];
 
     console.log(formats);
     // info = info.filter((key) => key.hasAudio === true);
