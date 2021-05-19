@@ -3,13 +3,13 @@ const arc = require("@architect/functions");
 const parseBody = arc.http.helpers.bodyParser;
 
 exports.handler = async function http(req) {
-  let body = parseBody(req);
-  console.log("body", body);
-  console.log(body.url);
-  const vID = body.url;
-  console.log(vID);
-
   try {
+    let body = parseBody(req);
+    console.log("body", body);
+    console.log(body.url);
+    const vID = body.url;
+    console.log(vID);
+
     if (!ytdl.validateID(vID)) throw new Error("invalid ID");
     // if (!body) throw new Error(600);
     // let info = await ytdl.getInfo(
