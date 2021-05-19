@@ -37,6 +37,7 @@ exports.handler = async function http(req) {
       statusCode: 200,
       headers: {
         "content-type": "application/json; charset=utf8",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(formats),
     };
@@ -46,8 +47,10 @@ exports.handler = async function http(req) {
       error: "Something blew up. Sorry.",
     };
     return {
+      cors: true,
       headers: {
         "content-type": "application/json; charset=utf8",
+        "Access-Control-Allow-Origin": "*",
       },
       body: JSON.stringify(error),
       statusCode: 400,
