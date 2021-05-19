@@ -17,6 +17,16 @@ exports.handler = async function http(req) {
     // );
     let info = await ytdl.getInfo(vID);
     info = info.formats;
+
+    const v1080 = info.filter((key) => key.itag === 299)[0];
+    const audio = info.filter((key) => key.itag === 140)[0];
+
+    const formats = {};
+
+    formats["v1080"] = v1080.url;
+    formats["audio"] = audio.url;
+
+    console.log(formats);
     // info = info.filter((key) => key.hasAudio === true);
     // info = info.filter((key) => key.hasVideo === true);
 
@@ -27,7 +37,7 @@ exports.handler = async function http(req) {
       headers: {
         "content-type": "application/json; charset=utf8",
       },
-      body: JSON.stringify(info),
+      body: JSON.stringify(formats),
     };
   } catch (e) {
     console.error("error", e.message);
