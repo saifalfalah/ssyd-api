@@ -17,7 +17,7 @@ exports.handler = async function http(req) {
     // );
     let info = await ytdl.getInfo(vID);
     info = info.formats;
-    console.log(info);
+    // console.log(info);
 
     const v1080 = info.filter((key) => key.itag === 137)[0];
     const audio = info.filter((key) => key.itag === 140)[0];
